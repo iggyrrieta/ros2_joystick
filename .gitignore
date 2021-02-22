@@ -1,11 +1,9 @@
-#QT User
-!*.user
-!*text..user
+# QtCreator CMake
+CMakeLists.txt.user*
 
 ### VisualStudioCode ###
 # exclude everything
 .vscode/*
-rastreator/.vscode/*
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
