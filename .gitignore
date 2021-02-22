@@ -1,0 +1,12 @@
+#QT User
+!*.user
+
+### VisualStudioCode ###
+# exclude everything
+.vscode/*
+rastreator/.vscode/*
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+**/.history
+

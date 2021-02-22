@@ -21,7 +21,7 @@
 /*****************************************************************************
 ** Namespace
 *****************************************************************************/
-
+namespace Ui {class MainWindow;}
 namespace ros2joystick {
 
   #define PI 3.14159265359
@@ -37,14 +37,6 @@ namespace ros2joystick {
     ~MainWindow();
 
     void closeEvent(QCloseEvent *event); // Overloaded function
-
-  public Q_SLOTS:
-    /*********************
-    ** Slot de señal
-    ** actualizar
-    ** variables pantalla
-    **********************/
-    void updatePoseDisplay();
 
   private Q_SLOTS:
     /*********************
@@ -63,7 +55,9 @@ namespace ros2joystick {
     void on_a_speed_valueChanged(int value);
 
   private:
-    Ui::MainWindowDesign ui;
+    Ui::MainWindowDesign *ui;
+    int argc_;
+    char** argv_;
 
     /*********************
     ** Variables velocidad
@@ -75,9 +69,11 @@ namespace ros2joystick {
     /*********************
     ** Link a joystick 
     **********************/
-    joystick Qjoystick;
+    std::shared_ptr<joystick> Qjoystick;
+    std::thread ros_spin_thread_;
+    void rosSpinThread();
 
   };
-}  // namespace ros2joystick
+}
 
-#endif // demo_joystick_MAIN_WINDOW_H
+#endif

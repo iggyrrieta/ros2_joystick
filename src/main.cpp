@@ -4,6 +4,7 @@
 #include <QApplication>
 #include "../include/ros2_joystick/main_window.hpp"
 
+#include "rclcpp/rclcpp.hpp"
 /*****************************************************************************
 ** Main
 *****************************************************************************/
